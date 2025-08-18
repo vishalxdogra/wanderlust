@@ -1,0 +1,57 @@
+<%- layout("layout/boilerplate") %>
+<br><br>
+<div class="row">
+  <div class="col-8 offset-2">
+    <h2 style="margin: 3rem; text-align: center;">Create New Listing</h2>
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input class="form-control" type="text" name="listing[title]" id="title" placeholder="enter your listing title" required>
+        <div class="invalid-feedback">
+          Invalid title!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="listing[description]" id="description" placeholder="enter description" class="form-control" ></textarea>
+        <div class="invalid-feedback">
+          Please enter description!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input class="form-control" type="file" name="listing[image]" id="image" placeholder="enter LINK or img" >
+        <div class="invalid-feedback">
+          Please enter image!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input class="form-control" type="text" name="listing[price]" id="price" placeholder="enter your listing price" required>
+        <div class="invalid-feedback">
+          Price is required
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input class="form-control" type="text" name="listing[location]" id="location" placeholder="enter your listing location" required>
+        <div class="invalid-feedback">
+          Location is required
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input class="form-control" type="text" name="listing[country]" id="country" placeholder="enter your listing country" required>
+        <div class="invalid-feedback">
+          Please enter your country
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <button type="submit" class="btn btn-dark">Submit</button>
+      </div>
+      <br>
+    </form>
+  </div>
+</div>
+    
+

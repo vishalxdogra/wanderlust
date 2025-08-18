@@ -1,0 +1,68 @@
+<% layout("layout/boilerplate")%>
+
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <h2 style="border: 3rem; text-align: center;">Edit Listing</h2>
+
+            <form method="POST" action="/listings/<%=datalist._id%>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div>
+                    <label for="title" class="form-label">Title</label>
+                    <input class="form-control"type="text" name="listing[title]" value="<%=datalist.title%>" required>
+                    <div class="invalid-feedback">
+                        Invalid title!
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <label for="description" class="form-label">Description</label>
+                    <br>
+                    <textarea name="listing[description]" class="form-control" ><%=datalist.description%></textarea>
+                    <div class="invalid-feedback">
+                        Please enter description!
+                    </div>
+                </div>
+                <br>
+                <div class="mb-3">
+                    Original Image
+                    <img src="<%=originalImageUrl %>" alt="originalImage" height="300px" width="250px">
+                </div>
+                <div>
+                    <label for="image" class="form-label">Image</label>
+                    <input class="form-control"type="file" name="listing[image]"  >
+                    <div class="invalid-feedback">
+                        Please enter image!
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="price" class="form-label">Price</label>
+                        <input class="form-control"type="number" name="listing[price]" value="<%=datalist.price%>" required >
+                        <div class="invalid-feedback">
+                            Price is required
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-md-8">
+                        <label for="location" class="form-label">Location</label>
+                        <input class="form-control"type="text" name="listing[location]" value="<%=datalist.location%>" required >
+                        <div class="invalid-feedback">
+                            Location is required
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <label for="country" class="form-label">Country</label>
+                    <input class="form-control"type="text" name="listing[country]" value=" <%= datalist.country %>" required >
+                    <div class="invalid-feedback">
+                        Please enter your country
+                    </div>
+                    <div style="text-align: center;" ><button type="submit" class="btn btn-dark mt-3">submit</button></div>
+                </div>
+                
+                
+            </form>
+        </div>
+    </div>
+
